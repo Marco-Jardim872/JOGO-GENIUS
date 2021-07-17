@@ -1,0 +1,176 @@
+body{
+    margin: 0;
+    background-color:rgb(169, 182, 177);
+}
+.main-game{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+.genius{
+    display: grid;
+    grid-template-areas: "verde vermelho" "amarelo azul";
+    grid-gap: 70px;
+    border: 65px solid rgb(32, 32, 32);
+    background-color:rgb(32, 32, 32);
+    border-radius: 100%;
+    width: 700px;
+    height:700px;
+    box-shadow: 2px 2px 5px #464545;
+}
+.cgenius{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    position: absolute;
+    border: 10px solid rgb(32, 32, 32);
+    background-color:rgb(158, 150, 150);
+    border-radius: 100%;
+    width: 300px;
+    height:300px;
+    box-shadow: 2px 2px 5px  #000000;
+    
+}
+.cgenius h1{
+    color:#fff
+}
+#iniciar{
+    border: 2px solid #000;
+    border-radius:5px;
+    cursor: pointer;
+}
+
+.blue{
+    grid-area: azul;
+    background-color:blue;
+    border-bottom-right-radius:100%;
+    border: 5px groove rgb(95, 77, 179);
+}
+.red{
+    grid-area:vermelho;
+    background-color:red;
+    border-top-right-radius:100%;
+    border: 5px groove rgb(214, 102, 102);
+}
+.yellow{
+    grid-area:amarelo;
+    background-color: yellow;
+    border-bottom-left-radius:100%;
+    border: 5px groove rgb(241, 243, 133);
+}
+.green{
+    grid-area:verde;
+    background-color: green;
+    border-top-left-radius:100%;
+    border: 5px groove rgb(86, 211, 113);
+}
+.selected{
+    opacity: 0.4;
+   
+}
+
+
+
+.overlay {
+    position: absolute;
+     margin:auto;
+     background: rgba(0, 0, 0, 0.3);
+     align-items: center;
+     justify-content: center;
+     display: flex;
+     visibility: hidden;
+     width:100vw;
+     height: 100vh;
+     z-index: 1; 
+   }
+   
+   .overlay.active {
+     visibility: visible;
+   }
+   
+   .popup {
+    justify-content: center;
+     background: #f8f8f8;
+     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+     border-radius: 3px;
+     
+     font-family: "Montserrat", sans-serif;
+     padding: 20px;
+     text-align: center;
+     width: 600px;
+     transition: 0.3s ease all;
+     transform: scale(0.7);
+     opacity: 0;
+   }
+   
+   .popup .btn-cerrar-popup {
+     font-size: 20px;
+     line-height: 20px;
+     display: block;
+     text-decoration: none;
+     justify-content: right;
+     text-align: right;
+     transition: 0.3s ease all;
+     color: #155f0c;
+   }
+   
+   .popup .btn-cerrar-popup:hover {
+     color: rgb(197, 195, 195);
+   }
+   
+   .popup h3 {
+     font-size: 36px;
+     font-weight: 600;
+     margin-bottom: 10px;
+     opacity: 0;
+     color: #006633;
+   }
+   
+   .popup h4 {
+     font-size: 26px;
+     font-weight: 300;
+     margin-bottom: 40px;
+     opacity: 0;
+     color: rgb(185, 10, 10);
+   }
+   
+     
+   /* ------------------------- */
+   /* ANIMACIONES */
+   /* ------------------------- */
+   .popup.active {
+     transform: scale(1);
+     opacity: 1;
+   }
+   .popup.active h3 {
+     animation: entradaTitulo 0.8s ease 0.5s forwards;
+   }
+   .popup.active h4 {
+     animation: entradaSubtitulo 0.8s ease 0.5s forwards;
+   }
+   @keyframes entradaTitulo {
+    from {
+      opacity: 0;
+      transform: translateY(-25px);
+    }
+  
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes entradaSubtitulo {
+    from {
+      opacity: 0;
+      transform: translateY(25px);
+    }
+  
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
